@@ -1,13 +1,13 @@
-import {StyleSheet, Text, View, SafeAreaView, TouchableHighlight} from 'react-native';
+import {StyleSheet, Text, View, SafeAreaView, TouchableHighlight, TouchableNativeFeedback} from 'react-native';
 
 export default function ListItem({el, deleteFunction}) {
 
     return (
-        <TouchableHighlight onPress={()=>{
-            deleteFunction(el.index)
+        <TouchableNativeFeedback onPress={()=>{
+            deleteFunction(el.key)
         }}>
             <Text style={styles.text}>{el.text}</Text>
-        </TouchableHighlight>
+        </TouchableNativeFeedback>
     );
 }
 
